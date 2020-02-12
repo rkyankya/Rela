@@ -7,10 +7,10 @@
 
 
   <strong>Items Bought</strong>
-<ul>  
-  <% @buyer.product_id.each do |product|%>
-  <li>
-   <%= product.name %> 
+<ul class="list-group">  
+  <% @buyer.products.each do |product|%>
+  <li class="list-group-item">
+   <%= product.name %> | <%= product.seller.name%>
   </li>
   <% end %>
 </ul>

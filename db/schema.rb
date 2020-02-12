@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_153018) do
+ActiveRecord::Schema.define(version: 2020_02_12_074311) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_buyers_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -32,14 +30,12 @@ ActiveRecord::Schema.define(version: 2020_02_11_153018) do
 
   create_table "sellers", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_sellers_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
     t.string "email"
     t.string "password_digest"
     t.string "remember_token"

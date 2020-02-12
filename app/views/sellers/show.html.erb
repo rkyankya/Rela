@@ -4,6 +4,15 @@
   <strong>Name:</strong>
   <%= @seller.name %>
 </p>
+
+  <strong>Items Sold</strong>
+<ul class="list-group">  
+  <% @seller.products.each do |product|%>
+  <li class="list-group-item">
+   <%= product.name %> | <%= product.buyer.name%>
+  </li>
+  <% end %>
+</ul>
  
 
 <%= link_to 'Edit', edit_seller_path(@seller) %> |

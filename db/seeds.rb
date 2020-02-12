@@ -19,26 +19,26 @@ p 'Database has been refreshed'
   name = "foo#{n + 1}bar"
   email = "foo#{n + 1}@bar.com"
   password = 'foobar'
-  User.create!(username: name,
+  User.create!(name: name,
                email: email,
                password: password,
                password_confirmation: password)
 end
 
 10.times do
-  Buyer.create(name: Faker::FunnyName.name, product_id: Faker::Number.within(range: 1..10))
+  Buyer.create(name: Faker::FunnyName.name)
 end
 
 p 'Buyers Created'
 
 5.times do
-  Seller.create(name: Faker::FunnyName.name, product_id: Faker::Number.within(range: 1..10))
+  Seller.create(name: Faker::FunnyName.name)
 end
 
 p 'Sellers Created'
 
 40.times do
-  Product.create(name: Faker::Device.model_name, buyer_id: Faker::Number.within(range: 1..10), seller_id: Faker::Number.within(range: 1..10))
+  Product.create(name: Faker::Device.model_name, buyer_id: Faker::Number.within(range: 1..10), seller_id: Faker::Number.within(range: 1..5))
 end
 
 p 'Products Created'
