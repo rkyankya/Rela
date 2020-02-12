@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buyer.name %>
+</p>
+
+
+  <strong>Items Bought</strong>
+<ul class="list-group">  
+  <% @buyer.products.each do |product|%>
+  <li class="list-group-item">
+   <%= product.name %> | <%= product.seller.name%>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
+<%= link_to 'Back', buyers_path %>
